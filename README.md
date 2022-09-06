@@ -1,5 +1,7 @@
 # Pontozó Rendszer
 
+[Az Applikáció elérhetősége](https://roaring-longma-8f7881.netlify.app/)
+
 ## Működés
 
 Az oldalon egy egyszerű pontozó rendszer látható.
