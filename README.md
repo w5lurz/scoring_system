@@ -2,6 +2,8 @@
 
 [Az Applikáció elérhetősége](https://roaring-longma-8f7881.netlify.app/)
 
+![Example picture](/assets/images/scoring1.PNG)
+
 ## Működés
 
 Az oldalon egy egyszerű pontozó rendszer látható.
