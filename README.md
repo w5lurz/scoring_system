@@ -1,45 +1,91 @@
-# Pontozó komponens készítése React-ben
+# Pontozó Rendszer
 
-_Kliensoldali webprogramozás 1. beadandó_
+## Működés
 
-## Nyilatkozat
+Az oldalon egy egyszerű pontozó rendszer látható.
 
-Kérlek, töltsétek ki az adataitokkal beadás előtt!
+A navigációs menüben (felül) található maga az applikáció "neve", egy pontszámláló, egy gomb, ami a hibákat/problémákat mutatja (ha vannak) és egy százalékot jelző állapotjelző.
 
-```txt
-<Kiss Tamás Csaba>
-<Neptun kódja>
-Kliensoldali webprogramozás - beadandó
-Ezt a megoldást a fent írt hallgató küldte be és készítette a Kliensoldali webprogramozás kurzus számonkéréséhez.
-Kijelentem, hogy ez a megoldás a saját munkám. Nem másoltam vagy használtam harmadik féltől
-származó megoldásokat. Nem továbbítottam megoldást hallgatótársaimnak, és nem is tettem közzé.
-Az Eötvös Loránd Tudományegyetem Hallgatói Követelményrendszere
-(ELTE szervezeti és működési szabályzata, II. Kötet, 74/C. §) kimondja, hogy mindaddig,
-amíg egy hallgató egy másik hallgató munkáját - vagy legalábbis annak jelentős részét -
-saját munkájaként mutatja be, az fegyelmi vétségnek számít.
-A fegyelmi vétség legsúlyosabb következménye a hallgató elbocsátása az egyetemről.
-```
+Maga az applikáció egy oldalból áll, melyen maga a pontozó rendszer látható. Tartalma:
 
-## Telepítés
+-   Lapok címkéje felül, navigációt segítendő és információt tartalmaznak a pontozás állapotáról
+    -   Lapok címkéjén látható az adott feladathoz tartozó szempontok száma és hány darab van kitöltve a kötelezőekből
+-   Gombok alul, szintén navigációt segítendő
+-   Minden Lapon az adott feladathoz tartozó szempontok láthatóak különböző beviteli mezőkkel
+-   Beviteli mezők validációja:
+    -   Minden mező lehet kötelezően töltendő, vagy opcionális
+    -   Típusaik:
+        -   Select
+        -   Number - Text Field
+        -   Checkbox
+    -   Megjegyzés: a maximális pontszám megjelenítése hiányzik a beviteli mezők mellől
 
-```bash
-npm install
-```
-
-## Futtatás
-
-```bash
-npm start
-```
-
-## Tesztelés
-
-A tesztelés a futtatással párhuzamosan is történhet. Ezt elsősorban a tanári értékelés megkönnyítésére hoztuk létre, de a hallgatók is láthatják ezt a felületet. Alapvetően a `stories` könyvtárhoz nem kell hozzányúlni. Ha azonban látod, hogyan működik, és saját tesztekkel kiegészítenéd, akkor azt nyugodtan tedd meg. A komponens interfészén azonban változtatni nem szabad!
-
-```bash
-npm run storybook
-```
-
-## Leírás
-
-A keretprogram egy egyszerű és lecsupaszított alkalmazás a Create-React-App-pal létrehozva. A fő `App` komponens egyszerűen csak megjeleníti a `ScoringComponent` komponenst. A feladatod ennek a `ScoringComponent` komponensnek az elkészítése. A legjobb az lenne, ha a megoldásod a `scoring` könyvtárba kerülne, és azon belül hoznál létre további fájlokat és könyvtárakat igény szerint.
+JSON file, ami alapján megjelenik maga a pontozó rendszer:
+{
+"name": "Verseny neve",
+"tasks": [
+{
+"name": "1. feladat",
+"aspects": [
+{
+"id": 11,
+"name": "1. szempont",
+"type": "list",
+"values": {
+"good": 5,
+"bad": 0
+},
+"required": true
+}
+]
+},
+{
+"name": "2. feladat",
+"aspects": [
+{
+"id": 21,
+"name": "1. szempont",
+"description": "1. szempont leírása",
+"type": "number",
+"maxValue": 5,
+"required": true
+},
+{
+"id": 22,
+"name": "2. szempont",
+"description": "2. szempont leírása",
+"type": "number",
+"maxValue": 4,
+"required": true
+},
+{
+"id": 23,
+"name": "3. szempont",
+"description": "3. szempont leírása",
+"type": "number",
+"maxValue": 6,
+"required": true
+},
+{
+"id": 24,
+"name": "4. szempont",
+"description": "4. szempont leírása",
+"type": "number",
+"maxValue": 4,
+"required": false
+}
+]
+},
+{
+"name": "3. feladat",
+"aspects": [
+{
+"id": 31,
+"name": "1. szempont",
+"type": "boolean",
+"value": 2
+}
+]
+}
+]
+}
